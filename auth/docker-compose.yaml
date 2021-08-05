@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  auth:
+    image: techserve4u/transformation-ffm-auth
+    ports:
+      - "5000:8000"
+

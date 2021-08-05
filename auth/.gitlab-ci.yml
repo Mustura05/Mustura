@@ -1,0 +1,21 @@
+image: docker:stable
+stages:
+  - build
+  - deploy
+
+build: 
+  stage: build
+  services: 
+    - docker:dind
+  script:
+    - docker info
+    - docker build -t techserve4u/transformation-ffm-auth .
+    - echo "$PASSWORD" | docker login -u "$USER" --password-stdin
+    - docker push techserve4u/transformation-ffm-auth
+deploy:
+  stage: deploy
+  services: 
+    - docker:dind
+  image: ictu/sshpass
+  script: 
+    - sshpass -p 123hello ssh -o StrictHostKeyChecking=no ubuntu@13.212.88.116 "cd ffm-authentication-service && docker-compose down && docker-compose pull auth && docker-compose up -d"

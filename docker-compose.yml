@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+        auth:
+                image: 7744149944/auth
+                ports:
+                        - "5001:8000"
+                command: sh -c "/wait && python manage.py runserver"
+        user:
+                image: 7744149944/user
+                ports:
+                        - "5002:3000"
+        task:
+                image: 7744149944/task
+                ports:
+                        - "5003:8000"
+        delivery:
+                image: 7744149944/delivery
+                ports:
+                        - "5004:3000"
+        attendence:
+                image: 7744149944/attendence
+                ports:
+                        - "5005:3000"
+        admin:
+                image: 7744149944/admin
+                ports:
+                        - "5006:8000"
+                depends_on:
+                        - "auth"
+                        - "user"
+                        - "task"
+                        - "delivery"
+                        - "attendence"
