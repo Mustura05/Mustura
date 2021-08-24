@@ -2,7 +2,7 @@
 
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-postgres_local_base = 'postgresql://authuser:letsplay@18.222.129.110:5432/'
+postgres_local_base = 'postgresql://authuser:letsplay@18.218.49.194:5432/'
 database_name = 'ffm_auth'
 SECRET_TEXT = os.getenv('SECRET_TEXT', 'the_super_secret_text')
 
