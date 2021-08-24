@@ -55,3 +55,4 @@ pipeline {
         echo '***** DEPLOYMENT IS DONE FOR TEST SERVER *****'
       }
     }
+  }
