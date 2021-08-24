@@ -50,7 +50,7 @@ pipeline {
       steps {
         echo '***** DEPLOYING TO TEST SERVER *****'
         withCredentials([string(credentialsId: 'SERVERPASS', variable: 'SERVERPASS')])    {
-          sh "sshpass -p ${SERVERPASS} ssh -o StrictHostKeyChecking=no ubuntu@18.117.133.1 'docker-compose down && docker-compose up -d'"
+          sh "sshpass -p ${SERVERPASS} ssh -o StrictHostKeyChecking=no ubuntu@18.216.192.85 'docker-compose down && docker-compose up -d'"
         }
         echo '***** DEPLOYMENT IS DONE FOR TEST SERVER *****'
       }
