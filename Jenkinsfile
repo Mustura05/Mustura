@@ -23,8 +23,8 @@ pipeline {
         docker build -t 7744149944/user:01 .
         cd ../task
         docker build -t 7744149944/task:01 .
-        cd ../attendance
-        docker build -t 7744149944/attendance:01 .
+        cd ../attendence
+        docker build -t 7744149944/attendence:01 .
         cd ../delivery
         docker build -t 7744149944/delivery:01 .
         cd ../admin
@@ -39,7 +39,7 @@ pipeline {
         docker push 7744149944/auth:01
         docker push 7744149944/user:01
         docker push 7744149944/task:01
-        docker push 7744149944/attendance:01
+        docker push 7744149944/attendence:01
         docker push 7744149944/delivery:01
         docker push 7744149944/admin:01
         '''
