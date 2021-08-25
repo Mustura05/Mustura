@@ -17,6 +17,7 @@ pipeline {
         echo '********STARTING BUILD STAGE*******'
         echo '***********************************'
         sh '''
+        docker rmi 7744149944/auth:01 7744149944/user:01 7744149944/task:01 7744149944/attendance:01 7744149944/delivery:01 7744149944/admin:01
         cd auth
         docker build -t 7744149944/auth:01 .
         cd ../user
