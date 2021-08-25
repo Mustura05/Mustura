@@ -22,7 +22,7 @@ services:
                 ports:
                         - "5005:3000"
         admin:
-                image: 7744149944/admin:01
+                image: 7744149944/admin:02
                 ports:
                         - "5006:8000"
                 depends_on:
