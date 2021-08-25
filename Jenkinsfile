@@ -28,7 +28,7 @@ pipeline {
         cd ../delivery
         docker build -t 7744149944/delivery:01 .
         cd ../admin
-        docker build -t 7744149944/admin:01 .
+        docker build -t 7744149944/admin:02 .
         '''
         echo '***** DOCKER HUB *****'
         withCredentials([usernamePassword(credentialsId: 'DockerHubC', passwordVariable: 'DHPASS', usernameVariable: 'DHUSER')]) {
@@ -41,7 +41,7 @@ pipeline {
         docker push 7744149944/task:01
         docker push 7744149944/attendence:01
         docker push 7744149944/delivery:01
-        docker push 7744149944/admin:01
+        docker push 7744149944/admin:02
         '''
       }
     }
