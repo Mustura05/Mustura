@@ -17,7 +17,7 @@ pipeline {
         echo '********STARTING BUILD STAGE*******'
         echo '***********************************'
         sh '''
-        docker rmi 7744149944/auth:01 7744149944/user:01 7744149944/task:01 7744149944/attendance:01 7744149944/delivery:01 7744149944/admin:01
+        docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true
         cd auth
         docker build -t 7744149944/auth:01 .
         cd ../user
